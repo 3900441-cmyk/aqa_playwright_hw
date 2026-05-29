@@ -1,0 +1,23 @@
+{
+  "name": "aqa_playwright_hw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "module",
+    "url": "git+https://github.com/3900441-cmyk/aqa_playwright_hw.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/3900441-cmyk/aqa_playwright_hw/issues"
+  },
+  "homepage": "https://github.com/3900441-cmyk/aqa_playwright_hw#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.1"
+  }
+}
