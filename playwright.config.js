@@ -1,4 +1,5 @@
-import { defineConfig, devices } from '@playwright/test'; // Додали імпорт devices
+import { defineConfig, devices } from '@playwright/test';
+import 'dotenv/config';
 
 export default defineConfig({
   outputDir: 'test-results',
@@ -11,7 +12,7 @@ export default defineConfig({
   workers: 1,
   reporter: 'html',
   use: {
-    baseUrl: 'https://qauto.forstudy.space/',
+    baseURL: process.env.BASE_URL,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     headless: false,
