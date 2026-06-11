@@ -15,7 +15,7 @@ test.describe('Registration Form with POM', () => {
         await expect(regModal.title).toHaveText('Registration');
     });
 
-    test('Success Registration with valid data', async ({ page }) => {
+    test('Registration with valid data', async ({ page }) => {
         const uniqueEmail = `aqa-test${Date.now()}@test.com`;
         
         await regModal.fillForm({
@@ -65,7 +65,7 @@ test.describe('Registration Form with POM', () => {
     test('Passwords do not match', async () => {
         await regModal.fillForm({
             password: 'Password123',
-            repeatPassword: 'WrongPassword'
+            repeatPassword: 'WrongPassword1'
         });
         await regModal.nameInput.focus();
         await expect(regModal.errorMessage('#signupRepeatPassword')).toHaveText('Passwords do not match');

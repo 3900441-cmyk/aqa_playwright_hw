@@ -11,13 +11,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/3900441-cmyk/aqa_playwright_hw/issues"
   },
   "homepage": "https://github.com/3900441-cmyk/aqa_playwright_hw#readme",
   "devDependencies": {
     "@playwright/test": "^1.60.0",
-    "@types/node": "^25.9.1"
+    "@types/node": "^25.9.1",
+    "dotenv": "^17.4.2"
   }
 }

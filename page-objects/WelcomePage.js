@@ -5,7 +5,12 @@ export class WelcomePage {
     }
 
     async open() {
-        await this.page.goto('https://guest:welcome2qauto@qauto.forstudy.space/');
+        const url = process.env.BASE_URL;
+        const username = process.env.HTTP_USERNAME;
+        const password = process.env.HTTP_PASSWORD;
+        const cleanUrl = url.replace('https://', '');
+        
+        await this.page.goto(`https://${username}:${password}@${cleanUrl}`);
     }
 
     async clickSignUp() {
