@@ -3,6 +3,7 @@ import { WelcomePage } from '../page-objects/WelcomePage';
 import { RegistrationModal } from '../page-objects/RegistrationModal';
 
 test.describe('Registration Form with POM', () => {
+    test.use({ storageState: { cookies: [], origins: [] } });
     let welcomePage;
     let regModal;
 
