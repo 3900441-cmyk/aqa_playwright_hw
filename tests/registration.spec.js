@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Registration Form', () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
   
   test.beforeEach(async ({ page }) => {
     await page.goto('https://guest:welcome2qauto@qauto.forstudy.space/');
