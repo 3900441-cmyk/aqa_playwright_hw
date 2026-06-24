@@ -31,6 +31,6 @@ jobs:
       - name: Run Playwright tests
         run: xvfb-run npx playwright test --project=chromium
         env:
-          PLAYWRIGHT_TEST_BASE_URL: https://qauto.forstudy.space
+          BASE_URL: https://qauto.forstudy.space
           HTTP_USERNAME: ${{ secrets.HTTP_USERNAME }}
           HTTP_PASSWORD: ${{ secrets.HTTP_PASSWORD }}
