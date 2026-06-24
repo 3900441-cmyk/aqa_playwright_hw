@@ -9,7 +9,7 @@ on:
 jobs:
   playwright-run:
     runs-on: ubuntu-latest
-
+    
     container:
       image: mcr.microsoft.com/playwright:v1.39.0-jammy
 
@@ -21,12 +21,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          
+
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npx playwright test --project=chromium
         env:
+          PLAYWRIGHT_TEST_BASE_URL: https://qauto.forstudy.space
           HTTP_USERNAME: ${{ secrets.HTTP_USERNAME }}
           HTTP_PASSWORD: ${{ secrets.HTTP_PASSWORD }}
