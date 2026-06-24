@@ -1,0 +1,27 @@
+name: Playwright Tests inside Docker
+
+on:
+  push:
+    branches: [ main, master, feat-env-configuration ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  playwright-run:
+    runs-on: ubuntu-latest
+    
+    container:
+      image: mcr.microsoft.com/playwright:v1.39.0-jammy
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Playwright tests
+        run: npx playwright test
+        env:
+          HTTP_USERNAME: ${{ secrets.HTTP_USERNAME }}
+          HTTP_PASSWORD: ${{ secrets.HTTP_PASSWORD }}
